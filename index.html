@@ -1,98 +1,194 @@
 <!DOCTYPE html>
-<!-- saved from url=(0035)https://iniobongobot.github.io/nnn/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>DEA Leaves 9ja</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Be My Valentine ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff0f3;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            overflow: hidden;
+            touch-action: manipulation;
+        }
+
+        #main-content {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 1.6rem;
+            margin: 40px 20px;
+            z-index: 10;
+        }
+
+        /* This is the area where buttons can move */
+        #game-container {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: absolute;
+            transition: transform 0.2s ease-out;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+            z-index: 100;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%, -50%);
+        }
+
+        #noBtn {
+            background-color: #dee2e6;
+            color: #495057;
+            z-index: 50;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+        }
+
+        #tooltip {
+            position: absolute;
+            background: #343a40;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            display: none;
+            z-index: 110;
+            pointer-events: none;
+            transform: translate(-50%, -100%);
+        }
+
+        #success {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .couple-img {
+            width: 85%;
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-	<main>
-		<h1>
-			Damilola Esther Aluko
-		</h1>
-		<h2>
-			Leaves Nigeria in
-		</h2>
-		<p id="demo">COUNTDOWN: <br>0Days 9Hours 40Minutes 26Seconds </p>
 
-		<span>
-			<form>
-				<input type="checkbox" id='1'><label for='1'>Program of interest</label> <br>
-				<input type="checkbox"><label>Check for schools with program of interest</label><br>
-				<input type="checkbox"><label>Determine references</label><br>
-				<input type="checkbox"><label>Apply for program</label><br>
-				<input type="checkbox"><label>Pay application fee</label><br>
-				<input type="checkbox"><label>Get Financial statement</label><br>
-				<input type="checkbox"><label>Get Admission</label><br>
-				<input type="checkbox"><label>Pay part of fees</label><br>
-				<input type="checkbox"><label>Apply for Visa</label><br>
-				<input type="checkbox"><label>Pay for Flight</label><br>
-				<input type="checkbox"><label>Get School</label><br>
-			</form>
-		</span>
-	</main>
+    <div id="main-content">
+        <h1 id="questionText">Loading...</h1>
+        
+        <div id="game-container">
+            <div id="tooltip">Sure?</div>
+            <button id="yesBtn">YES</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
 
+    <div id="success">
+        <h1 id="successMsg">YAY! ❤️</h1>
+        <p style="font-style: italic; color: #c9184a; font-weight: bold; padding: 0 20px;">
+            "Valentine's Day is just another day to show you how much I love you."
+        </p>
+    </div>
 
-<script type="text/javascript">
-	var deadline = new Date("sept 25, 2022 00:00:01").getTime(); 
-var x = setInterval(function() { 
-var now = new Date().getTime(); 
-var t = deadline - now; 
-var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
-var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
-var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
-var seconds = Math.floor((t % (1000 * 60)) / 1000); 
-document.getElementById("demo").innerHTML ="COUNTDOWN: </br>"+ days + "Days "  
-+ hours + "Hours " + minutes + "Minutes " + seconds + "Seconds "; 
-    if (t < 0) { 
-        clearInterval(x); 
-        document.getElementById("demo").innerHTML = "It is Time!!!!" ; 
-    } 
-}, 1000);
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name') || "There";
+        document.getElementById('questionText').innerHTML = `Hi ${name}, <br>will you be my Valentine? 🌹`;
 
-</script>
-<style type="text/css">
-	*{box-sizing: border-box;}
-	body{
-		background: linear-gradient(45deg, #1118, #fff8, #3338), url('nnn.jpg');
-		padding: 0px;
-		margin: 0px;
-		background-repeat: repeat;
-		
-	}
-	main{
-		margin:20% 5% 5%;
-		width: 90%;
-		height:90%;
-		background-color: #3339;
-		padding: 10%;
-		border-radius: 50px;
-		text-align: center;
-		color: rgb(207, 226, 207);
-		transition: 2s ease;
-	}
-	span{
-		display : inline;
-		font-family: helvetica;
-		font-size: 4rem;
-		text-align: left;
-	}
-	h1{
-		font-family: helvetica;
-		font-size: 6rem;
-	}
-	h2{
-		font-family: helvetica;
-		font-size: 5rem;
-	}
-	p{
-		font-size: 6rem;
-		font-family: courier;
-		font-weight: bolder;
-	}
-	input[type=checkbox] {
-         position: relative;
-	       cursor: pointer;
-		   width: 30px;
-         height: 30px;
-    }
-    
-</style></body></html>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const tooltip = document.getElementById('tooltip');
+        const container = document.getElementById('game-container');
+        const successDiv = document.getElementById('success');
+        const mainContent = document.getElementById('main-content');
+
+        let yesScale = 1;
+        let clickCount = 0;
+        const phrases = ["Are you sure?", "Really?", "Think again!", "You're missing!", "Click YES! 🥺"];
+
+        function moveNo() {
+            const containerRect = container.getBoundingClientRect();
+            const yesRect = yesBtn.getBoundingClientRect();
+            
+            // Generate random positions until we find one that doesn't overlap Yes
+            let randomX, randomY, isOverlapping;
+            let attempts = 0;
+
+            do {
+                randomX = Math.random() * (containerRect.width - 100) + 50;
+                randomY = Math.random() * (containerRect.height - 100) + 50;
+                
+                // Calculate distance from the center of the Yes button
+                const dx = randomX - (yesRect.left - containerRect.left + yesRect.width/2);
+                const dy = randomY - (yesRect.top - containerRect.top + yesRect.height/2);
+                const distance = Math.sqrt(dx*dx + dy*dy);
+                
+                // Keep away from Yes button based on its current size
+                const minSafeDistance = (yesRect.width / 2) + 60;
+                isOverlapping = distance < minSafeDistance;
+                attempts++;
+            } while (isOverlapping && attempts < 20);
+
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            noBtn.style.transform = 'translate(-50%, -50%)';
+
+            // Grow Yes Button
+            yesScale += 0.35;
+            yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
+
+            // Tooltip
+            tooltip.innerText = phrases[clickCount % phrases.length];
+            tooltip.style.display = 'block';
+            tooltip.style.left = randomX + 'px';
+            tooltip.style.top = (randomY - (noBtn.offsetHeight / 2) - 10) + 'px';
+            
+            clickCount++;
+        }
+
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            moveNo();
+        });
+
+        yesBtn.addEventListener('click', () => {
+            mainContent.style.display = 'none';
+            successDiv.style.display = 'block';
+            document.getElementById('successMsg').innerText = `YAY ${name}! ❤️`;
+            document.body.style.backgroundColor = '#ffccd5';
+        });
+    </script>
+</body>
+</html>
